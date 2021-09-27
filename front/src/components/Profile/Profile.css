@@ -1,0 +1,51 @@
+.Profile {
+    width: 680px;
+    position: absolute;
+    top: 5px;
+    left: calc(50vw - 360px);
+    padding: 15px;
+}
+
+.Profile__header {
+    margin-top: 10px;
+    margin-bottom: 20px !important;
+    width: calc(100% - 59px);
+    display: inline-block;
+}
+
+.Profile__btn {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.Profile__logoutBtn {
+    color: #2196f3 !important;
+}
+
+.Profile__editBtn {
+    background-color: #2196f3 !important;
+}
+
+.Profile__saveBtn {
+    background-color: #009658 !important;
+}
+
+.Profile__input {
+    margin-top: 30px !important;
+}
+
+.Profile__radioLabel {
+    margin-bottom: 15px;
+}
+
+.Profile__radio {
+    color: #2196f3 !important;
+}
+
+.Profile__date {
+    margin-top: 20px !important;
+}
+
+.Profile__link {
+    cursor: pointer;
+}

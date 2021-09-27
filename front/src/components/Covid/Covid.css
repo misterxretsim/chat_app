@@ -1,0 +1,22 @@
+.Covid {
+    width: 680px;
+    position: absolute;
+    top: 5px;
+    left: calc(50vw - 360px);
+    padding: 15px;
+}
+
+.Covid__header {
+    margin-top: 10px;
+    margin-bottom: 20px !important;
+}
+
+.Covid__input {
+    margin-top: 30px !important;
+}
+
+.Covid__btn {
+    background-color: #009658 !important;
+    margin: 30px 0 !important;
+}
+

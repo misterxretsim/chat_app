@@ -1,0 +1,10 @@
+.Navigator {
+    position: absolute;
+    top: 5px;
+    left: calc(50vw + 355px);
+    width: 200px;
+}
+
+.Icon__colored {
+    color: #2196f3;
+}

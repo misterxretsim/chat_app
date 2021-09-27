@@ -1,0 +1,41 @@
+body {
+    background-color: transparent !important;
+}
+
+.Paper__login {
+    width: 450px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 10% auto 0 auto;
+}
+
+.Login12 {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Login__avatar {
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.Login__form {
+    width: 100%;
+    margin-top: 2px;
+}
+
+.Login__submit {
+    margin: 10px 0 6px !important;
+    background-color: #2196f3 !important;
+}
+
+.Login__input {
+    margin-top: 20px !important;
+    background-color: transparent !important;
+}
+
+.Login__link {
+    cursor: pointer;
+}

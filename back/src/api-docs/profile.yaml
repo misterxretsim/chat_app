@@ -1,0 +1,58 @@
+components:
+  schemas:
+    Profile-object:
+      type: object
+      example:
+        id: 2
+        name: Kel
+        email: kel@aa.aa
+        pass: qwerty123
+        gender: male
+        birthdate: 2001-10-12
+    Profile-status:
+      type: object
+      example:
+        status: ok
+
+tags:
+  name: Profile
+  description: The profile managing API
+
+/api/profile?id={id}:
+  get:
+    summary: Returns profile object
+    tags: [Profile]
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The profile id
+    responses:
+      200:
+        description: The profile object
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/Profile-object'
+/api/profile:
+  post:
+    summary: Changes profile object
+    tags: [Profile]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            $ref: '#/components/schemas/Profile-object'
+    responses:
+      200:
+        description: The status of change
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/Profile-status'

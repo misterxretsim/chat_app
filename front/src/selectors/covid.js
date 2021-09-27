@@ -1,0 +1,1 @@
+export const covidSelector = (state) => state.covid

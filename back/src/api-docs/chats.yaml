@@ -1,0 +1,159 @@
+components:
+  schemas:
+    All-chats:
+      type: array
+      example:
+        - id: 2
+          name: Robot
+          email: robot@aa.aa
+        - id: 7
+          name: Alexandr
+          email: alex@aa.aa
+
+    Object-with-messages:
+      type: array
+      example:
+        id: 1
+        name: Robot
+        email: robot@aa.aa
+        messages:
+          - id: 1
+            text: Hello
+            profile_owner: true
+            time: 20:20
+          - id: 2
+            text: Hi
+            profile_owner: false
+            time: 20:21
+
+    Create-chat:
+      type: object
+      example:
+        id: 1
+        name: Robot
+        email: robot@aa.aa
+
+    Add-message:
+      type: object
+      example:
+        id: 1
+        text: Hello!
+        time: 13:55
+
+    Status-error-response:
+      type: object
+      example:
+        status: error
+    Status-success-response:
+      type: object
+      example:
+        status: ok
+
+tags:
+  name: Chats
+  description: The chats managing API
+
+/api/chats/all?id={id}:
+  get:
+    summary: Returns all chats
+    tags: [Chats]
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The profile id
+    responses:
+      200:
+        description: Array of chats
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/All-chats'
+      500:
+        description: Something went wrong
+
+/api/chats?id={id}:
+  get:
+    summary: Returns object with chats and messages
+    tags: [Chats]
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The profile id
+    responses:
+      200:
+        description: Array of object with chats and messages
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Object-with-messages'
+      500:
+        description: Something went wrong
+
+/api/chats/create:
+  post:
+    summary: Creates new chat
+    tags: [Chats]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Create-chat'
+    responses:
+      200:
+        description: Status of operation
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Status-success-response'
+                - $ref: '#/components/schemas/Status-error-response'
+
+/api/chats/delete?id={id}:
+  get:
+    summary: Deletes chat
+    tags: [Chats]
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+        required: true
+        description: The chat id
+    responses:
+      200:
+        description: Status of operation
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Status-success-response'
+                - $ref: '#/components/schemas/Status-error-response'
+
+/api/chats/new-message:
+  post:
+    summary: Adds message to chat
+    tags: [ Chats ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Add-message'
+    responses:
+      200:
+        description: Status of operation
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Status-success-response'
+                - $ref: '#/components/schemas/Status-error-response'

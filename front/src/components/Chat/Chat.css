@@ -1,0 +1,14 @@
+.Chat {
+    text-align: center;
+    background-color: #282c34;
+    justify-content: center;
+    display: flex;
+    min-height: 100vh;
+}
+
+.Chat__content {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    padding: 5px 10px;
+}

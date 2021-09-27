@@ -1,0 +1,88 @@
+components:
+  schemas:
+    Login-request:
+      type: object
+      example:
+        email: kel@aa.aa
+        pass: qwerty123
+    Login-success-response:
+      type: object
+      example:
+        status: ok
+        profile:
+          id: 2
+          name: Kel
+          email: kel@aa.aa
+          pass: qwerty123
+          gender: male
+          birthdate: 2001-10-12
+
+tags:
+  name: Login
+  description: The login managing API
+
+/api/signin:
+  post:
+    summary: Sign in
+    tags: [ Login ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Login-request'
+    responses:
+      200:
+        description: The status of login and profile object
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Login-success-response'
+                - $ref: '#/components/schemas/Status-error-response'
+      500:
+        description: Something went wrong
+
+/api/check:
+  post:
+    summary: Checks email for repeat
+    tags: [ Login ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Login-request'
+    responses:
+      200:
+        description: The status of login and profile object
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Status-success-response'
+                - $ref: '#/components/schemas/Status-error-response'
+      500:
+        description: Something went wrong
+
+/api/signup:
+  post:
+    summary: Sign up
+    tags: [ Login ]
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Login-request'
+    responses:
+      200:
+        description: The status of login and profile object
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/Login-success-response'
+                - $ref: '#/components/schemas/Status-error-response'
+      500:
+        description: Something went wrong

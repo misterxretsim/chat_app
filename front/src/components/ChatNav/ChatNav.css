@@ -1,0 +1,36 @@
+.ChatNav {
+    position: absolute;
+    top: 5px;
+    right: calc(50vw + 355px);
+    width: 200px;
+}
+
+.ChatNav__nav {
+    padding-bottom: 0 !important;
+}
+
+.ChatNav__item {
+    cursor: pointer;
+    padding-right: 8px !important;
+}
+
+.ChatNav__itemAddBtn {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.ChatNav__itemText {
+    white-space: nowrap;
+}
+
+.MuiListItemText-root {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.MuiListItemText-primary {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

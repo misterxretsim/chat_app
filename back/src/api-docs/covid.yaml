@@ -1,0 +1,34 @@
+components:
+  schemas:
+    Covid:
+      type: array
+      example:
+        - id: 1
+          date: 2021-07-15
+          confirmed: 5810335
+          active: 450347
+          recovered: 5216331
+          deaths: 143657
+        - id: 2
+          date: 2021-07-16
+          confirmed: 5810335
+          active: 450347
+          recovered: 5216331
+          deaths: 143657
+
+tags:
+  name: Covid
+  description: The covid managing API
+
+/api/covid:
+  get:
+    summary: Returns statistics for the last 20 days
+    tags: [Covid]
+    responses:
+      200:
+        description: The list of the statistics
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/Covid'

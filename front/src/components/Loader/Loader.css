@@ -1,0 +1,33 @@
+.Loader {
+    position: absolute;
+    display: block;
+    bottom: 100px;
+    right: calc(50vw - 40px - 50px);
+}
+
+.Loader__typing {
+    width: 80px;
+    height: 0;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 14px;
+    margin-right: 100px;
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+}
+@keyframes blinker {
+    0% {
+        color: #282c34;
+    }
+    50% {
+        color: #fff;
+    }
+    100% {
+        color: #282c34;
+    }
+}
+
+.MuiCircularProgress-colorPrimary {
+    color: #2196f3 !important;
+}

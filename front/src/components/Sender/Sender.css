@@ -1,0 +1,24 @@
+.Sender {
+    position: absolute;
+    bottom: 10px;
+    width: 700px;
+}
+
+.Sender__input {
+    width: calc(100% - 73px);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 26px;
+    padding: 5px 20px;
+    border: 0;
+}
+
+.Sender__btn {
+    margin-left: auto !important;
+    margin-right: 15px !important;
+    color: #2196f3 !important;
+}
+.MuiIconButton-root.Mui-disabled {
+    color: rgba(0, 0, 0, 0.26) !important;
+}

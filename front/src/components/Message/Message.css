@@ -1,0 +1,17 @@
+.Message {
+    max-height: calc(100vh - 70px);
+    overflow-y: scroll;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.Message__me {
+    text-align: right !important;
+}
+
+.Avatar__me {
+    margin-left: 16px;
+}
