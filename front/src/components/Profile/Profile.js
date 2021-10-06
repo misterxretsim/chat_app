@@ -28,6 +28,7 @@ import { tokenSelector } from '../../selectors/token'
 import { validateEmail, validateBD, isExist } from '../../helper'
 import { useHistory } from 'react-router-dom'
 import { setToken } from '../../actions/token'
+import usePrevious from '../../hooks/usePrevious'
 
 export default function Profile() {
     const { id, name, email, pass, gender, birthdate } =
@@ -49,6 +50,7 @@ export default function Profile() {
         birthdate,
     })
     const [isEdit, setIsEdit] = useState(false)
+    const prevProfile = usePrevious(profile)
 
     const handleLogout = React.useCallback(() => {
         dispatch(setToken(''))
@@ -96,7 +98,7 @@ export default function Profile() {
                     validationBD
                 )
             ) {
-                dispatch(changeProfile(profile, token))
+                (prevProfile !== profile) && dispatch(changeProfile(profile, token))
                 setIsEdit(!isEdit)
             } else setOpen(true)
         else setIsEdit(!isEdit)
