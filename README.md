@@ -29,6 +29,7 @@ Also below I will tell you how you can run it and what you need for this.
  - [ ] Email confirmation
  - [ ] Sending messages on email(*If needed*)
  - [ ] Auto-reload messages(*SSE / Web Sockets*)
+ - [ ] Adding messages to the companion's account
  - [ ] Bot
     - [ ] Logic
     - [ ] Working with telegram

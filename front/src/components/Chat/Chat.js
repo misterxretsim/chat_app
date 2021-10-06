@@ -1,4 +1,5 @@
 import './Chat.css'
+import React from 'react'
 import Message from '../Message/Message'
 import Sender from '../Sender/Sender'
 import { useSelector } from 'react-redux'

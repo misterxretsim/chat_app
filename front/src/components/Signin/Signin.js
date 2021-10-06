@@ -60,7 +60,9 @@ export default function Signin() {
                     onChange={handleEmail}
                     autoFocus
                     startAdornment={
-                        <InputAdornment position="start">＠</InputAdornment>
+                        <InputAdornment position="start">
+                            <span role="img" aria-label="email">＠</span>
+                        </InputAdornment>
                     }
                     labelWidth={43}
                 />
@@ -75,7 +77,9 @@ export default function Signin() {
                     value={pass}
                     onChange={handlePass}
                     startAdornment={
-                        <InputAdornment position="start">🔒</InputAdornment>
+                        <InputAdornment position="start">
+                            <span role="img" aria-label="pass">🔒</span>
+                        </InputAdornment>
                     }
                     labelWidth={59}
                 />

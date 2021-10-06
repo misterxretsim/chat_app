@@ -17,7 +17,7 @@ export default function Routes() {
     const history = useHistory()
     const handleRender = (Component, isChatComponent = false) => {
         return (
-            <>
+            <React.Fragment>
                 <Navigator />
                 {isChatComponent ? (
                     <div className="Chat">
@@ -27,7 +27,7 @@ export default function Routes() {
                 ) : (
                     <Component />
                 )}
-            </>
+            </React.Fragment>
         )
     }
 

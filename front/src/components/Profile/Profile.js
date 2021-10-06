@@ -174,7 +174,9 @@ export default function Profile() {
                     type="date"
                     onChange={handleBirthdate}
                     startAdornment={
-                        <InputAdornment position="start">🗓</InputAdornment>
+                        <InputAdornment position="start">
+                            <span role="img" aria-label="birthdate">🗓</span>
+                        </InputAdornment>
                     }
                     labelWidth={120}
                 />
@@ -193,7 +195,9 @@ export default function Profile() {
                     value={profile.name}
                     onChange={handleName}
                     startAdornment={
-                        <InputAdornment position="start">👤</InputAdornment>
+                        <InputAdornment position="start">
+                            <span role="img" aria-label="name">👤</span>
+                        </InputAdornment>
                     }
                     labelWidth={34}
                 />
@@ -212,7 +216,9 @@ export default function Profile() {
                     value={profile.email}
                     onChange={handleEmail}
                     startAdornment={
-                        <InputAdornment position="start">＠</InputAdornment>
+                        <InputAdornment position="start">
+                            <span role="img" aria-label="email">＠</span>
+                        </InputAdornment>
                     }
                     labelWidth={42}
                 />
@@ -232,7 +238,9 @@ export default function Profile() {
                     value={profile.pass}
                     onChange={handlePass}
                     startAdornment={
-                        <InputAdornment position="start">🔒</InputAdornment>
+                        <InputAdornment position="start">
+                            <span role="img" aria-label="pass">🔒</span>
+                        </InputAdornment>
                     }
                     labelWidth={60}
                 />

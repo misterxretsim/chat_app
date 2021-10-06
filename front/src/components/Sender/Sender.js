@@ -64,7 +64,7 @@ export default function Sender(props) {
     React.useEffect(() => ref.current.focus(), [ref])
 
     return (
-        <>
+        <React.Fragment>
             <Paper
                 component="form"
                 elevation={0}
@@ -94,6 +94,6 @@ export default function Sender(props) {
                 </IconButton>
             </Paper>
             {robotTyping && isRobotChat(location) ? <Loader /> : null}
-        </>
+        </React.Fragment>
     )
 }

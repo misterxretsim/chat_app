@@ -175,7 +175,9 @@ export default function Signup() {
                     value={pass1}
                     onChange={handlePass1}
                     startAdornment={
-                        <InputAdornment position="start">🔒</InputAdornment>
+                        <InputAdornment position="start">
+                            <span role="img" aria-label="pass">🔒</span>
+                        </InputAdornment>
                     }
                     labelWidth={loginDataIsOk ? 59 : 125}
                 />
@@ -198,14 +200,16 @@ export default function Signup() {
                         value={pass2}
                         onChange={handlePass2}
                         startAdornment={
-                            <InputAdornment position="start">🔒</InputAdornment>
+                            <InputAdornment position="start">
+                                <span role="img" aria-label="pass2">🔒</span>
+                            </InputAdornment>
                         }
                         labelWidth={143}
                     />
                 </FormControl>
             ) : null}
             {loginDataIsOk ? (
-                <>
+                <React.Fragment>
                     <FormControl
                         fullWidth
                         variant="outlined"
@@ -223,7 +227,7 @@ export default function Signup() {
                             autoFocus
                             startAdornment={
                                 <InputAdornment position="start">
-                                    👤
+                                    <span role="img" aria-label="name">👤</span>
                                 </InputAdornment>
                             }
                             labelWidth={100}
@@ -272,13 +276,13 @@ export default function Signup() {
                             onChange={handleBirthdate}
                             startAdornment={
                                 <InputAdornment position="start">
-                                    🗓
+                                    <span role="img" aria-label="birthdate">🗓</span>
                                 </InputAdornment>
                             }
                             labelWidth={185}
                         />
                     </FormControl>
-                </>
+                </React.Fragment>
             ) : null}
             <Button
                 type="submit"

@@ -54,7 +54,7 @@ export default function AddChatBtn() {
     }, [validationEmail, name, dispatch, email, token, history])
 
     return (
-        <>
+        <React.Fragment>
             <ListItem className="ChatNav__itemAddBtn">
                 <IconButton
                     onClick={handleOpen}
@@ -106,6 +106,6 @@ export default function AddChatBtn() {
                     </Button>
                 </DialogActions>
             </Dialog>
-        </>
+        </React.Fragment>
     )
 }
