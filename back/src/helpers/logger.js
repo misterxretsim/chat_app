@@ -1,3 +1,4 @@
+const bodyToStr = (rq) => JSON.stringify(rq.body)
 const currDateTime = (currDate) =>
     ('0' + currDate.getDay()).slice(-2) +
     '-' +
@@ -15,14 +16,10 @@ const currDateTime = (currDate) =>
 const logString = (rq) =>
     `Request:\n\tMethod: ${rq.method}\n\tURI: ${
         rq.url
-    }\n\tDateTime: ${currDateTime(new Date())}\n`
-const logStringWithBody = (rq) =>
-    `Request:\n\tMethod: ${rq.method}\n\tURI: ${
-        rq.url
-    }\n\tDateTime: ${currDateTime(new Date())}\n\tBody: ${JSON.stringify(
-        rq.body
-    )}\n`
-const logger = (rq) =>
-    console.log(rq.method !== 'GET' ? logStringWithBody(rq) : logString(rq))
+    }\n\tDateTime: ${currDateTime(new Date())}\n\t` +
+    'Authorization: ' +
+    (rq.headers.authorization ? 'Yes\n\t' : 'No\n\t') +
+    (bodyToStr(rq).length > 2 ? `Body: ${bodyToStr(rq)}\n` : '')
+const logger = (rq) => console.log(logString(rq))
 
 module.exports = logger
